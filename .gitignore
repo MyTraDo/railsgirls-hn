@@ -15,3 +15,8 @@
 /log/*
 !/log/.keep
 /tmp
+public/uploads
+tmp
+tmp
+logs
+.c9
