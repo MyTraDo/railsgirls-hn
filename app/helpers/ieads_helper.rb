@@ -1,0 +1,2 @@
+module IeadsHelper
+end

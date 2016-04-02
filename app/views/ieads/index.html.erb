@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ieads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ieads.each do |iead| %>
+      <tr>
+        <td><%= iead.name %></td>
+        <td><%= iead.description %></td>
+        <td><%= iead.picture %></td>
+        <td><%= link_to 'Show', iead %></td>
+        <td><%= link_to 'Edit', edit_iead_path(iead) %></td>
+        <td><%= link_to 'Destroy', iead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Iead', new_iead_path %>

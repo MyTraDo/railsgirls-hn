@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @iead.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @iead.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @iead.picture %>
+</p>
+
+<%= link_to 'Edit', edit_iead_path(@iead) %> |
+<%= link_to 'Back', ieads_path %>
