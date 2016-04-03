@@ -85,6 +85,7 @@ end
      # params.require(:comment).permit(:user_name, :body, :idea_id)
     #end
     def comment_params
-   params.require(:comment).permit(:user_name, :body, :idea_id, :picture)
-end
+      #params.require(:comment).permit(:user_name, :body, :idea_id, :picture)
+      params.require(:comment).permit(:user_name, :body, :idea_id, :picture, :reply_id, :user_id)
+    end
 end
