@@ -24,8 +24,8 @@
       </tr>
     <% end %>
   </tbody>
-</table>
-
+<table class="table">
+<%= image_tag(idea.picture_url, width: 600) if idea.picture.present? %>
 <br>
 
 <%= link_to 'New Comment', new_comment_path %>

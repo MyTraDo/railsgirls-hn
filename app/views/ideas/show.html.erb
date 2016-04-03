@@ -2,7 +2,8 @@
 
 <div class="row">
   <div class="col-md-9">
-    <%= image_tag(@idea.picture_url, width: '100%') if @idea.picture.present? %>
+    <%= image_tag(@idea.picture_url(:medium)) if @idea.picture.present? %>
+    <%#= image_tag(@idea.picture_url, width: '100%') if @idea.picture.present? %>
   </div>
 
   <div class="col-md-3">
@@ -20,11 +21,12 @@
 </div>
 <h3>Comments</h3>
 <% @comments.each do |comment| %>
-  <div>
-    <strong><%= comment.user_name %></strong>
-    <br />
-    <p><%= comment.body %></p>
-    <p><%= link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  </div>
-<% end %>
+    <div class="row">
+      <div class="col-md-3">
+        <strong><%= comment.user_name %></strong>
+      </div>
+      <div class="col-md-8"><%= comment.body %></div>
+      <%= link_to 'Delete', comment_path(comment), method: :delete, class: "col-md-1 btn btn-danger", data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
 <%= render 'comments/form' %>
